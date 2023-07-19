@@ -1,10 +1,7 @@
-﻿using System.ComponentModel.DataAnnotations;
-
-namespace WebAPI.Models.Entities
+﻿namespace WebAPI.Data.DTOs
 {
-    public class Contact
+    public class ContactDTO
     {
-        [Key]
         public int ContactId { get; set; }
         public string ContactName { get; set; }
         public int CompanyId { get; set; } // Required foreign key property

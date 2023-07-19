@@ -1,7 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System.Collections.Generic;
-using System.Reflection.Emit;
-using System.Reflection.Metadata;
 using WebAPI.Models.Entities;
 
 public class WebAPIDbContext : DbContext
