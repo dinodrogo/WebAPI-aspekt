@@ -1,11 +1,17 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.SqlServer.Infrastructure.Internal;
 using WebAPI.Models.Entities;
 
 public class WebAPIDbContext : DbContext
 {
-    public DbSet<Company> Companies { get; set; }
-    public DbSet<Contact> Contacts { get; set; }
-    public DbSet<Country> Countries { get; set; }
+    public virtual DbSet<Company> Companies { get; set; }
+    public virtual DbSet<Contact> Contacts { get; set; }
+    public virtual DbSet<Country> Countries { get; set; }
+
+    public WebAPIDbContext(DbContextOptions<WebAPIDbContext> options)
+    {
+    }
+
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
