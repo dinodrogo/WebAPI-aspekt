@@ -13,7 +13,7 @@ public class WebAPIDbContext : DbContext
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
     {
         // Set up the database connection to MSSQL LocalDB
-        optionsBuilder.UseSqlServer(@"Server=(LocalDB)\MSSQLLocalDB;Database=thisisatest;Trusted_Connection=True;");
+        optionsBuilder.UseSqlServer(@"Server=(LocalDB)\MSSQLLocalDB;Database=WebAPIAspektDB;Trusted_Connection=True;");
     }
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
