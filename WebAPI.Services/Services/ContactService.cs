@@ -82,7 +82,17 @@ namespace WebAPI.Services.Services
 
         public async Task<IEnumerable<Contact>> FilterContact(int companyId, int countryId)
         {
-            return await _dataContext.Contacts.Where(contact => contact.CompanyId == companyId && contact.CountryId == countryId).ToListAsync();
+            IEnumerable<Contact> FilteredContacts = _dataContext.Contacts;
+            if (companyId != 0)
+            {
+                FilteredContacts = FilteredContacts.Where(contact => contact.CompanyId == companyId);
+            }
+            if (countryId != 0)
+            {
+                FilteredContacts = FilteredContacts.Where(contact => contact.CountryId == countryId);
+            }
+            return FilteredContacts;
+            //return await _dataContext.Contacts.Where(contact => contact.CompanyId == companyId && contact.CountryId == countryId).ToListAsync();
         }
     }
 }
