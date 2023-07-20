@@ -37,8 +37,10 @@ builder.Services.AddDbContextPool<WebAPIDbContext>((serviceProvider, options) =>
 IMapper mapper = mappingConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddScoped<ICompanyService, CompanyService>();
+builder.Services.AddScoped<ICountryService, CountryService>();
+builder.Services.AddScoped<IContactService, ContactService>();
 
- 
+
 
 
 
