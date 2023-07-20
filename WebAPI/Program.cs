@@ -38,7 +38,7 @@ IMapper mapper = mappingConfig.CreateMapper();
 builder.Services.AddSingleton(mapper);
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 
-
+ 
 
 
 

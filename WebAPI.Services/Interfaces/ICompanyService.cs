@@ -10,8 +10,8 @@ namespace WebAPI.Services.Interfaces
 {
     public interface ICompanyService
     {
-        CompanyDTO CreateCompany(CompanyDTO Player);
-        CompanyDTO UpdateCompany(CompanyDTO Player);
+        CompanyDTO CreateCompany(CompanyDTO Company);
+        CompanyDTO UpdateCompany(CompanyDTO Company);
         Task<bool> DeleteCompany(int id);
         Task<IEnumerable<Company>> GetCompanies();
     }

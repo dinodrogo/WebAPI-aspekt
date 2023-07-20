@@ -23,9 +23,19 @@ public class WebAPIDbContext : DbContext
     {
         // Configure any entity relationships here if needed
         // In this case, we define the relationships between entities
+
+        modelBuilder.Entity<Company>(entity =>
+        {
+            entity.HasKey(a => a.CompanyId);
+        });
+        
         modelBuilder.Entity<Company>()
             .HasMany(e => e.Contact)
             .WithOne();
+
+
+
+
         modelBuilder.Entity<Country>()
             .HasMany(e => e.Contact)
             .WithOne();
