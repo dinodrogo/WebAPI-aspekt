@@ -75,14 +75,14 @@ namespace WebAPI.Services.Services
             return await _dataContext.SaveChangesAsync();
         }
 
-        public Task<IEnumerable<Contact>> GetContactsWithCompanyAndCountry()
+        public async Task<IEnumerable<Contact>> GetContactsWithCompanyAndCountry()
         {
-            throw new NotImplementedException();
+            return await _dataContext.Contacts.Where(contact => contact.CountryId != null && contact.CompanyId != null).ToListAsync();
         }
 
-        public Task<IEnumerable<Contact>> FilterContact()
+        public async Task<IEnumerable<Contact>> FilterContact(int companyId, int countryId)
         {
-            throw new NotImplementedException();
+            return await _dataContext.Contacts.Where(contact => contact.CompanyId == companyId && contact.CountryId == countryId).ToListAsync();
         }
     }
 }

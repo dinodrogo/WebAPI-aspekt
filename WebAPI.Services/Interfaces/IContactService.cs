@@ -15,7 +15,7 @@ namespace WebAPI.Services.Interfaces
         Task<bool> DeleteContact(int id);
         Task<IEnumerable<Contact>> GetContacts();
         Task<IEnumerable<Contact>> GetContactsWithCompanyAndCountry();
-        Task<IEnumerable<Contact>> FilterContact();
+        Task<IEnumerable<Contact>> FilterContact(int countryId, int companyId);
 
     }
 }

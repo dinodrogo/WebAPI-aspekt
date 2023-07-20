@@ -8,8 +8,8 @@ namespace WebAPI.Data.DTOs
         public string ContactName { get; set; }
 
         [DefaultValue(null)]
-        public int CompanyId { get; set; } // Required foreign key property
+        public int? CompanyId { get; set; } // Required foreign key property
         [DefaultValue(null)]
-        public int CountryId { get; set; } // Required foreign key property
+        public int? CountryId { get; set; } // Required foreign key property
     }
 }

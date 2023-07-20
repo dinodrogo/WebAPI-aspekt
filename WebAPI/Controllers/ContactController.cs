@@ -65,5 +65,22 @@ namespace WebAPI.Controllers
             }
             return BadRequest();
         }
+        [HttpGet]
+        [Route("GetAllContactsWithCompanyAndCountry")]
+        public async Task<IEnumerable<Contact>> GetContactsWithCompanyAndCountry()
+        {
+            var Contacts = await _ContactService.GetContactsWithCompanyAndCountry();
+
+            return Contacts;
+        }
+
+        [HttpGet]
+        [Route("GetAllFilteredContacts/{companyId:int}/{countryId:int}")]
+        public async Task<IEnumerable<Contact>> FilterContact([FromRoute] int companyId, [FromRoute] int countryId)
+        {
+            var Contacts = await _ContactService.FilterContact(companyId, countryId);
+
+            return Contacts;
+        }
     }
 }
