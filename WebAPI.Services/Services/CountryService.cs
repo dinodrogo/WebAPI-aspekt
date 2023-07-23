@@ -54,17 +54,12 @@ namespace WebAPI.Services.Services
             var CountryEntity = await _dataContext.Countries.FindAsync(CountryId);
 
             _dataContext.Countries.Remove(CountryEntity);
-            return await SaveAsync() > 0;
+            return await _dataContext.SaveChangesAsync() > 0; // saves if affected rows > 0
         }
 
         public async Task<IEnumerable<Country>> GetCountries()
         {
             return await _dataContext.Countries.ToListAsync();
-        }
-
-        public async Task<int> SaveAsync()
-        {
-            return await _dataContext.SaveChangesAsync();
         }
     }
 }

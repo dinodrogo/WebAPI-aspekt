@@ -11,12 +11,10 @@ namespace WebAPI.Controllers
     public class ContactController : ControllerBase
     {
         private readonly IContactService _ContactService;
-        private readonly ILogger<ContactController> _logger;
 
         public ContactController(ILogger<ContactController> logger, IContactService ContactService)
         {
             _ContactService = ContactService;
-            _logger = logger;
         }
 
 

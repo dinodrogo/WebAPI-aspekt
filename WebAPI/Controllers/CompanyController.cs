@@ -11,12 +11,10 @@ namespace WebAPI.Controllers
     public class CompanyController : ControllerBase
     {
         private readonly ICompanyService _CompanyService;
-        private readonly ILogger<CompanyController> _logger;
 
         public CompanyController(ILogger<CompanyController> logger, ICompanyService CompanyService)
         {
             _CompanyService = CompanyService;
-            _logger = logger;
         }
 
 

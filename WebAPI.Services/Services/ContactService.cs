@@ -62,17 +62,12 @@ namespace WebAPI.Services.Services
             var ContactEntity = await _dataContext.Contacts.FindAsync(ContactId);
 
             _dataContext.Contacts.Remove(ContactEntity);
-            return await SaveAsync() > 0;
+            return await _dataContext.SaveChangesAsync() > 0; // saves if affected rows > 0
         }
 
         public async Task<IEnumerable<Contact>> GetContacts()
         {
             return await _dataContext.Contacts.ToListAsync();
-        }
-
-        public async Task<int> SaveAsync()
-        {
-            return await _dataContext.SaveChangesAsync();
         }
 
         public async Task<IEnumerable<Contact>> GetContactsWithCompanyAndCountry()

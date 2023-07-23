@@ -11,12 +11,10 @@ namespace WebAPI.Controllers
     public class CountryController : ControllerBase
     {
         private readonly ICountryService _CountryService;
-        private readonly ILogger<CountryController> _logger;
 
         public CountryController(ILogger<CountryController> logger, ICountryService CountryService)
         {
             _CountryService = CountryService;
-            _logger = logger;
         }
 
 
