@@ -15,11 +15,6 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 
-
-
-
-
-
 var mappingConfig = new MapperConfiguration(mc =>
 {
     mc.AddProfile(new CompanyProfile());
@@ -39,11 +34,6 @@ builder.Services.AddSingleton(mapper);
 builder.Services.AddScoped<ICompanyService, CompanyService>();
 builder.Services.AddScoped<ICountryService, CountryService>();
 builder.Services.AddScoped<IContactService, ContactService>();
-
-
-
-
-
 
 
 var app = builder.Build();
