@@ -36,6 +36,33 @@ namespace WebAPI.Models.Migrations
                     b.HasKey("CompanyId");
 
                     b.ToTable("Companies");
+
+                    b.HasData(
+                        new
+                        {
+                            CompanyId = 1,
+                            CompanyName = "Aspekt"
+                        },
+                        new
+                        {
+                            CompanyId = 2,
+                            CompanyName = "Makpetrol"
+                        },
+                        new
+                        {
+                            CompanyId = 3,
+                            CompanyName = "Mcdonald's"
+                        },
+                        new
+                        {
+                            CompanyId = 4,
+                            CompanyName = "Microsoft"
+                        },
+                        new
+                        {
+                            CompanyId = 5,
+                            CompanyName = "Spotify"
+                        });
                 });
 
             modelBuilder.Entity("WebAPI.Models.Entities.Contact", b =>
@@ -63,6 +90,43 @@ namespace WebAPI.Models.Migrations
                     b.HasIndex("CountryId");
 
                     b.ToTable("Contacts");
+
+                    b.HasData(
+                        new
+                        {
+                            ContactId = 1,
+                            CompanyId = 1,
+                            ContactName = "Quincy Bell",
+                            CountryId = 1
+                        },
+                        new
+                        {
+                            ContactId = 2,
+                            CompanyId = 2,
+                            ContactName = "Kendra Cartwright",
+                            CountryId = 3
+                        },
+                        new
+                        {
+                            ContactId = 3,
+                            CompanyId = 2,
+                            ContactName = "Random Name",
+                            CountryId = 2
+                        },
+                        new
+                        {
+                            ContactId = 4,
+                            CompanyId = 4,
+                            ContactName = "Andrew Smith",
+                            CountryId = 3
+                        },
+                        new
+                        {
+                            ContactId = 5,
+                            CompanyId = 5,
+                            ContactName = "Darell Overton",
+                            CountryId = 3
+                        });
                 });
 
             modelBuilder.Entity("WebAPI.Models.Entities.Country", b =>
@@ -80,6 +144,33 @@ namespace WebAPI.Models.Migrations
                     b.HasKey("CountryId");
 
                     b.ToTable("Countries");
+
+                    b.HasData(
+                        new
+                        {
+                            CountryId = 1,
+                            CountryName = "Macedonia"
+                        },
+                        new
+                        {
+                            CountryId = 2,
+                            CountryName = "Serbia"
+                        },
+                        new
+                        {
+                            CountryId = 3,
+                            CountryName = "Brazil"
+                        },
+                        new
+                        {
+                            CountryId = 4,
+                            CountryName = "France"
+                        },
+                        new
+                        {
+                            CountryId = 5,
+                            CountryName = "Germany"
+                        });
                 });
 
             modelBuilder.Entity("WebAPI.Models.Entities.Contact", b =>
