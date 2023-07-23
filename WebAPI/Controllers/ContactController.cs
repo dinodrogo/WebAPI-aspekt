@@ -76,7 +76,7 @@ namespace WebAPI.Controllers
 
         [HttpGet]
         [Route("GetAllFilteredContacts/{companyId:int}/{countryId:int}")]
-        public async Task<IEnumerable<Contact>> FilterContact([FromRoute] int companyId=0, [FromRoute] int countryId = 0)
+        public async Task<IEnumerable<Contact>> FilterContact([FromRoute] int companyId = 0, [FromRoute] int countryId = 0) 
         {
             var Contacts = await _ContactService.FilterContact(companyId, countryId);
 

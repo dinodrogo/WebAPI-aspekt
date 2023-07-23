@@ -80,7 +80,7 @@ namespace WebAPI.Services.Services
             return await _dataContext.Contacts.Where(contact => contact.CountryId != null && contact.CompanyId != null).ToListAsync();
         }
 
-        public async Task<IEnumerable<Contact>> FilterContact(int companyId, int countryId)
+        public async Task<IEnumerable<Contact>> FilterContact(int companyId, int countryId) //if input=0 input is ignored
         {
             IEnumerable<Contact> FilteredContacts = _dataContext.Contacts;
             if (companyId != 0)
@@ -92,7 +92,6 @@ namespace WebAPI.Services.Services
                 FilteredContacts = FilteredContacts.Where(contact => contact.CountryId == countryId);
             }
             return FilteredContacts;
-            //return await _dataContext.Contacts.Where(contact => contact.CompanyId == companyId && contact.CountryId == countryId).ToListAsync();
         }
     }
 }
